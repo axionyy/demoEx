@@ -20,33 +20,25 @@ namespace test1
     /// </summary>
     public partial class UserOrderWindow : Window
     {
-        private string[] models = new Base().models;
-        private string[] types = new Base().types;
-        private string[] deffects = new Base().deffects;
-        private string[] statuses = new Base().statuses;
-
-        private List<Order> _order = new List<Order>();
+        private List<Order> _orders = new List<Order>();
 
         public UserOrderWindow()
         {
             InitializeComponent();
 
-            for(int i = 0; i < 20; i++)
+            _orders = new Base().ReadObjectFromFile();
+
+            if(_orders != null)
             {
-                Order newOrder = new Order
-                {
-                    Id = i,
-                    Model = models[i % 4],
-                    Type = types[i % 4],
-                    Deffect = deffects[i % 4],
-                    Status = statuses[i % 4],
-                    Comment = "надо что то приличное писать",
-                    ClientName = "Дурашка"
-                };
-                _order.Add(newOrder);
+                dataGrid.ItemsSource = _orders;
             }
-            dataGrid.ItemsSource = _order;
+            else
+            {
+                dataGrid.ItemsSource = new Base().GenerateOrders();
+                new Base().WriteObjectToFile(new Base().GenerateOrders());
+            }
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 

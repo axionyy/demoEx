@@ -5,6 +5,11 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>icons8-миленькая-розовая-папка-48.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="icons8-миленькая-розовая-папка-48.ico" />
+  </ItemGroup>
 
 </Project>

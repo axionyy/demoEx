@@ -12,7 +12,7 @@ namespace test1.Model
         public string Model { get; set; }
         public string Type { get; set; }
         public string Deffect { get; set; }
-        public string Comment { get; set; }
+        public string Comment { get; set; } = null;
         public string EmployeeComment { get; set; } = null;
         public string ClientName { get; set; }
         public string Status { get; set; } = null;

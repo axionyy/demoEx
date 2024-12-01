@@ -25,7 +25,7 @@ namespace test1
         private string[] deffects = new Base().deffects;
         private string[] statuses = new Base().statuses;
 
-        private List<Order> _order = new List<Order>();
+        private List<Order> _orders = new List<Order>();
 
         public EmployeeOrderWindow()
         {
@@ -43,9 +43,9 @@ namespace test1
                     Comment = "надо что то приличное писать",
                     ClientName = "Дурашка"
                 };
-                _order.Add(newOrder);
+                _orders.Add(newOrder);
             }
-            dataGrid.ItemsSource = _order;
+            dataGrid.ItemsSource = _orders;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
